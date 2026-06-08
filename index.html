@@ -72,21 +72,21 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .btn-out:hover{background:var(--pk);color:#fff}
 
 /* ── HERO ── */
-.hero{display:flex;align-items:stretch;min-height:560px;background:#FAF6F4;overflow:hidden}
-.hero-left{flex:1;padding:72px 52px 72px 76px;display:flex;flex-direction:column;justify-content:center}
-.hero-label{font-size:9px;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:var(--pk);margin-bottom:20px;opacity:0;animation:hRise .7s cubic-bezier(.22,1,.36,1) .2s forwards}
-.hero-h1-new{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,4.6vw,5rem);font-weight:700;line-height:1.05;color:#1A1A1A;margin:0;opacity:0;animation:hRise .8s cubic-bezier(.22,1,.36,1) .35s forwards}
-.hero-script{display:block;font-family:'Great Vibes',cursive;font-size:clamp(2.6rem,4.2vw,4.6rem);color:var(--pk);line-height:1.22;opacity:0;animation:hRise .8s cubic-bezier(.22,1,.36,1) .5s forwards}
-.hero-desc-new{font-size:13.5px;font-weight:400;line-height:1.85;color:rgba(26,26,26,.50);max-width:360px;margin-top:22px;margin-bottom:34px;opacity:0;animation:hRise .75s cubic-bezier(.22,1,.36,1) .65s forwards}
-.hero-btns-new{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:hRise .75s cubic-bezier(.22,1,.36,1) .8s forwards}
-.btn-gold{display:inline-flex;align-items:center;gap:9px;background:var(--pk);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:14px 30px;border-radius:6px;text-decoration:none;box-shadow:0 6px 22px rgba(224,29,136,.22);transition:background .3s,transform .2s,box-shadow .3s}
-.btn-gold:hover{background:#c5177b;transform:translateY(-2px);box-shadow:0 12px 36px rgba(224,29,136,.30)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(26,26,26,.18);color:rgba(26,26,26,.62);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:14px 30px;border-radius:6px;text-decoration:none;transition:border-color .3s,color .3s,transform .2s}
-.btn-ghost:hover{border-color:var(--pk);color:var(--pk);transform:translateY(-2px)}
-.hero-right-new{flex:0 0 44%;overflow:hidden}
-.hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:62% top;display:block;opacity:0;animation:hFadeIn 1.1s ease .1s forwards}
-@keyframes hRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-@keyframes hFadeIn{from{opacity:0}to{opacity:1}}
+:root{--rose:#C07268;--rose-h:#A85F57}
+.hero{display:flex;align-items:stretch;min-height:460px;background:#FAF7F5;overflow:hidden}
+.hero-left{flex:1;padding:60px 48px 60px 80px;display:flex;flex-direction:column;justify-content:center}
+.hero-label{font-size:9px;font-weight:800;letter-spacing:.38em;text-transform:uppercase;color:var(--rose);margin-bottom:16px;opacity:0;animation:hRise .6s cubic-bezier(.22,1,.36,1) .15s forwards}
+.hero-h1-new{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.2vw,4.6rem);font-weight:700;line-height:1.06;letter-spacing:-.025em;color:#1A1A1A;margin:0;opacity:0;animation:hRise .75s cubic-bezier(.22,1,.36,1) .28s forwards}
+.hero-script{display:block;font-family:'Great Vibes',cursive;font-size:clamp(2.4rem,3.8vw,4.2rem);color:var(--rose);line-height:1.18;opacity:0;animation:hRise .75s cubic-bezier(.22,1,.36,1) .44s forwards}
+.hero-desc-new{font-size:13px;font-weight:400;line-height:1.88;color:rgba(26,26,26,.48);max-width:340px;margin-top:18px;margin-bottom:0;opacity:0;animation:hRise .7s cubic-bezier(.22,1,.36,1) .60s forwards}
+.hero-btns-new{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;opacity:0;animation:hRise .7s cubic-bezier(.22,1,.36,1) .75s forwards}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:13px 26px;border-radius:5px;text-decoration:none;transition:background .25s,transform .2s}
+.btn-gold:hover{background:var(--rose-h);transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(192,114,104,.32);color:var(--rose);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:13px 26px;border-radius:5px;text-decoration:none;transition:background .25s,transform .2s}
+.btn-ghost:hover{background:rgba(192,114,104,.07);transform:translateY(-2px)}
+.hero-right-new{flex:0 0 46%;overflow:hidden}
+.hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:60% top;display:block}
+@keyframes hRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
 /* ── SECTION HEADER ── */
 .sch{text-align:center;margin-bottom:48px}
@@ -244,11 +244,12 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 @media(max-width:768px){
   header{padding:0 20px}
   .hero{flex-direction:column}
-  .hero-right-new{flex:none;height:64vw;min-height:260px;order:-1}
-  .hero-right-new>img{object-position:55% top}
-  .hero-left{padding:36px 24px 52px}
-  .hero-h1-new{font-size:2.4rem}
-  .hero-script{font-size:2.2rem}
+  .hero-right-new{flex:none;height:60vw;min-height:240px;order:-1}
+  .hero-right-new>img{object-position:58% top}
+  .hero-left{padding:32px 24px 48px}
+  .hero-h1-new{font-size:2.2rem}
+  .hero-script{font-size:2rem}
+  .hero-desc-new{max-width:100%}
   nav{display:none}
   .hdr-btn{display:none}
   .hamburger{display:flex}
@@ -332,11 +333,8 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
     </h1>
     <p class="hero-desc-new">We offer a wide range of professional beauty services designed to enhance your natural beauty and make you feel confident for every occasion.</p>
     <div class="hero-btns-new">
-      <a href="#booking" class="btn-gold">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Book Appointment
-      </a>
-      <a href="#services" class="btn-ghost">Explore Services</a>
+      <a href="#booking" class="btn-gold">Book Appointment</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
     </div>
   </div>
   <div class="hero-right-new" id="he7">
