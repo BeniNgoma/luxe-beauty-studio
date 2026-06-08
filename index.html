@@ -72,20 +72,63 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .btn-out:hover{background:var(--pk);color:#fff}
 
 /* ── HERO ── */
-.hero{display:flex;align-items:stretch;min-height:590px;background:#fff;overflow:hidden}
-.hero-left{flex:1;padding:56px 52px 56px 76px;display:flex;flex-direction:column;justify-content:center}
-.hero-ey{font-size:9.5px;font-weight:800;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.hero-h1{font-family:'Playfair Display',serif;font-size:58px;font-weight:800;line-height:1.05;color:var(--dark)}
-.hero-it{font-family:'Playfair Display',serif;font-size:58px;font-weight:700;font-style:italic;color:var(--pk);display:block;margin-bottom:18px}
-.hero-tag{font-size:15px;font-weight:500;margin-bottom:11px}
-.hero-desc{font-size:12.5px;color:var(--gray);line-height:1.85;margin-bottom:30px;max-width:400px}
-.hero-btns{display:flex;gap:14px;margin-bottom:46px;flex-wrap:wrap}
-.hero-feats{display:flex;gap:26px;flex-wrap:wrap}
-.hf{display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center}
-.hf svg{width:32px;height:32px}
-.hf span{font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gray);max-width:70px;line-height:1.4}
-.hero-right{flex:0 0 46%;overflow:hidden}
-.hero-right img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.hero{display:grid;grid-template-columns:1fr .88fr;min-height:100vh;background:#FFF8F6;overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;top:-160px;left:-160px;width:620px;height:620px;background:radial-gradient(circle,#F8EDEB 0%,transparent 66%);pointer-events:none;z-index:0}
+.hero-left{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:120px 52px 80px 76px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:100px;border:1px solid rgba(212,163,115,.28);background:rgba(212,163,115,.09);margin-bottom:32px;width:fit-content;opacity:0;animation:hRise .8s cubic-bezier(.22,1,.36,1) .25s forwards}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#D4A373;flex-shrink:0;animation:hPulse 2.2s ease-in-out infinite}
+.hero-badge-text{font-size:9.5px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#D4A373}
+.hero-h1-new{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,4.8vw,5.2rem);font-weight:300;line-height:1.06;letter-spacing:-.02em;color:#1A1A1A;margin:0;opacity:0;animation:hRise .85s cubic-bezier(.22,1,.36,1) .40s forwards}
+.hero-script{display:block;font-family:'Great Vibes',cursive;font-size:clamp(2.6rem,4.5vw,4.8rem);font-weight:400;color:#D4A373;line-height:1.2;margin-top:4px;opacity:0;animation:hRise .85s cubic-bezier(.22,1,.36,1) .52s forwards}
+.hero-ornament{display:flex;align-items:center;gap:12px;margin:28px 0;opacity:0;animation:hRise .8s cubic-bezier(.22,1,.36,1) .62s forwards}
+.hero-orn-line{height:1px;width:44px;background:linear-gradient(to right,transparent,rgba(212,163,115,.5))}
+.hero-orn-line.r{background:linear-gradient(to left,transparent,rgba(212,163,115,.5))}
+.hero-orn-sym{font-size:9px;color:rgba(212,163,115,.55);user-select:none}
+.hero-desc-new{font-size:13.5px;font-weight:300;line-height:1.9;color:rgba(26,26,26,.52);max-width:390px;margin-bottom:36px;opacity:0;animation:hRise .8s cubic-bezier(.22,1,.36,1) .72s forwards}
+.hero-btns-new{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:50px;opacity:0;animation:hRise .8s cubic-bezier(.22,1,.36,1) .82s forwards}
+.btn-gold{display:inline-flex;align-items:center;gap:9px;background:#D4A373;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;padding:15px 32px;border-radius:100px;text-decoration:none;box-shadow:0 8px 28px rgba(212,163,115,.32);transition:background .3s,transform .2s,box-shadow .3s}
+.btn-gold:hover{background:#B8864A;transform:scale(1.04);box-shadow:0 18px 48px rgba(212,163,115,.44)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(26,26,26,.13);color:rgba(26,26,26,.56);font-size:10.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;padding:15px 32px;border-radius:100px;text-decoration:none;transition:border-color .3s,color .3s,transform .2s}
+.btn-ghost:hover{border-color:rgba(212,163,115,.55);color:#D4A373;transform:scale(1.03)}
+.btn-ghost svg{transition:transform .3s}
+.btn-ghost:hover svg{transform:translateX(4px)}
+.hero-stats{display:flex;align-items:stretch;opacity:0;animation:hRise .8s cubic-bezier(.22,1,.36,1) .92s forwards}
+.hstat{display:flex;flex-direction:column}
+.hstat:not(:first-child){padding-left:28px}
+.hstat:not(:last-child){padding-right:28px}
+.hstat-val{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.4vw,2.3rem);font-weight:600;color:#1A1A1A;line-height:1;letter-spacing:-.02em}
+.hstat-lbl{font-size:9px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:rgba(26,26,26,.40);margin-top:6px;white-space:nowrap}
+.hstat-div{width:1px;align-self:stretch;background:linear-gradient(to bottom,transparent,rgba(212,163,115,.32),transparent)}
+.hero-right-new{position:relative;overflow:hidden}
+.hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.hero-right-new::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#FFF8F6 0%,rgba(255,248,246,.45) 18%,transparent 46%);z-index:1;pointer-events:none}
+.hero-right-new::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,26,.22) 0%,transparent 44%);z-index:1;pointer-events:none}
+.hglass{position:absolute;z-index:2;background:rgba(255,255,255,.76);-webkit-backdrop-filter:blur(28px);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,.88);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.11)}
+.hero-review-card{bottom:36px;left:28px;width:264px;padding:16px 18px;opacity:0;animation:hPopUp .75s cubic-bezier(.22,1,.36,1) 1.30s forwards}
+.hrc-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.hrc-icon{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(212,163,115,.14);display:flex;align-items:center;justify-content:center;color:#D4A373;font-size:18px;font-family:Georgia,serif;line-height:1}
+.hrc-quote{font-size:11.5px;font-weight:600;color:#1A1A1A;line-height:1.4}
+.hrc-author{font-size:10px;color:rgba(26,26,26,.42);margin-top:2px}
+.hrc-bottom{display:flex;align-items:center;justify-content:space-between}
+.hrc-stars{display:flex;gap:2px;color:#D4A373;font-size:11px;letter-spacing:1px}
+.hrc-badge{font-size:8.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:rgba(212,163,115,.12);color:#B8864A;padding:4px 10px;border-radius:100px}
+.hero-since{top:104px;right:28px;border-radius:14px;padding:10px 18px;opacity:0;animation:hFadeR .7s cubic-bezier(.22,1,.36,1) 1.55s forwards}
+.hero-since span{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(26,26,26,.62)}
+.hero-avail-card{bottom:36px;right:28px;border-radius:18px;padding:14px 18px;opacity:0;animation:hPopUp .7s cubic-bezier(.22,1,.36,1) 1.85s forwards}
+.hac-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.hac-dot{position:relative;width:8px;height:8px;flex-shrink:0}
+.hac-ping{position:absolute;inset:0;border-radius:50%;background:#34d399;opacity:.7;animation:hPing 1.4s cubic-bezier(0,0,.2,1) infinite}
+.hac-solid{position:absolute;inset:1px;border-radius:50%;background:#10b981}
+.hac-label{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(26,26,26,.60)}
+.hac-slot{font-family:'Playfair Display',serif;font-size:14.5px;font-weight:500;color:rgba(26,26,26,.72)}
+.hac-slot strong{color:#D4A373}
+.hero-arc{position:absolute;top:0;right:0;z-index:2;pointer-events:none;opacity:0;animation:hFade 1s ease 2s forwards}
+@keyframes hRise{from{opacity:0;transform:translateY(28px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes hPopUp{from{opacity:0;transform:translateY(20px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes hFadeR{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes hFade{from{opacity:0}to{opacity:1}}
+@keyframes hPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.6}}
+@keyframes hPing{75%,100%{transform:scale(2.2);opacity:0}}
 
 /* ── SECTION HEADER ── */
 .sch{text-align:center;margin-bottom:48px}
@@ -242,10 +285,14 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 @media(max-width:900px){.ab-grid{grid-template-columns:1fr;gap:28px}.gal-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){
   header{padding:0 20px}
-  .hero{flex-direction:column}
-  .hero-left{padding:40px 24px}
-  .hero-h1,.hero-it{font-size:40px}
-  .hero-right{flex:none;height:320px}
+  .hero{grid-template-columns:1fr}
+  .hero-right-new{height:62vw;min-height:280px;order:-1}
+  .hero-right-new::before{background:linear-gradient(to bottom,#FFF8F6 0%,transparent 26%,rgba(255,248,246,.3) 72%,#FFF8F6 100%)}
+  .hero-left{padding:32px 24px 64px}
+  .hero-h1-new{font-size:2.5rem}
+  .hero-script{font-size:2.3rem}
+  .hero-avail-card{display:none}
+  .hero-review-card{width:calc(100% - 40px);left:20px;right:20px;bottom:16px}
   nav{display:none}
   .hdr-btn{display:none}
   .hamburger{display:flex}
@@ -322,39 +369,76 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-left">
-    <p class="hero-ey" id="he0">Luxe Beauty Studio</p>
-    <h1 class="hero-h1" id="he1">Beauty Beyond</h1>
-    <span class="hero-it" id="he2">Expectations</span>
-    <p class="hero-tag" id="he3">Makeup, Hair, Lashes, Brows, Facials &amp; More</p>
-    <p class="hero-desc" id="he4">Découvrez une expérience beauté luxueuse et personnalisée pour révéler votre confiance et sublimer votre beauté naturelle.</p>
-    <div class="hero-btns" id="he5">
-      <a href="#booking" class="btn-pk">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span class="hero-badge-text">Premium Beauty Salon</span>
+    </div>
+    <h1 class="hero-h1-new">
+      Reveal the Beauty
+      <span class="hero-script">of your hair</span>
+    </h1>
+    <div class="hero-ornament">
+      <div class="hero-orn-line"></div>
+      <span class="hero-orn-sym">✦</span>
+      <div class="hero-orn-line r"></div>
+    </div>
+    <p class="hero-desc-new">Spécialistes en coiffures féminines, tresses, coloration, extensions et soins capillaires haut de gamme — pour sublimer chaque femme.</p>
+    <div class="hero-btns-new">
+      <a href="#booking" class="btn-gold">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Prendre Rendez-vous
       </a>
-      <a href="#services" class="btn-out">Voir nos Services</a>
+      <a href="#galerie" class="btn-ghost">
+        Voir Nos Réalisations
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
-    <div class="hero-feats" id="he6">
-      <div class="hf">
-        <svg viewBox="0 0 40 40" fill="none" stroke="#e01d88" stroke-width="1.6"><path d="M20 6l2.8 8.2H31l-6.6 4.8 2.5 7.8L20 22.4l-6.9 4.4 2.5-7.8L9 14.2h8.2z" stroke-linejoin="round"/></svg>
-        <span>Expertes Certifiées</span>
+    <div class="hero-stats">
+      <div class="hstat">
+        <span class="hstat-val">500+</span>
+        <span class="hstat-lbl">Clientes Satisfaites</span>
       </div>
-      <div class="hf">
-        <svg viewBox="0 0 40 40" fill="none" stroke="#e01d88" stroke-width="1.6"><rect x="13" y="8" width="14" height="22" rx="3"/><line x1="16" y1="8" x2="16" y2="5"/><line x1="24" y1="8" x2="24" y2="5"/><line x1="16" y1="18" x2="24" y2="18"/></svg>
-        <span>Produits Premium</span>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <span class="hstat-val">10</span>
+        <span class="hstat-lbl">Ans d'Expérience</span>
       </div>
-      <div class="hf">
-        <svg viewBox="0 0 40 40" fill="none" stroke="#e01d88" stroke-width="1.6"><path d="M20 7l2.5 7H30l-6 4.3 2.3 7.2L20 21 13.7 25.5l2.3-7.2L10 14H18z" stroke-linejoin="round"/></svg>
-        <span>Service Haut de Gamme</span>
-      </div>
-      <div class="hf">
-        <svg viewBox="0 0 40 40" fill="none" stroke="#e01d88" stroke-width="1.6"><path d="M20 34C20 34 6 26 6 16a7 7 0 0114-.5A7 7 0 0134 16c0 10-14 18-14 18z"/></svg>
-        <span>Satisfaction Garantie</span>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <span class="hstat-val">4.9★</span>
+        <span class="hstat-lbl">Note Clients</span>
       </div>
     </div>
   </div>
-  <div class="hero-right" id="he7">
-    <img src="https://images.pexels.com/photos/7208085/pexels-photo-7208085.jpeg?auto=compress&cs=tinysrgb&w=720&h=600&fit=crop" alt="Luxe Beauty Studio">
+  <div class="hero-right-new" id="he7">
+    <img src="https://images.pexels.com/photos/7208085/pexels-photo-7208085.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop" alt="Luxe Beauty Studio">
+    <div class="hglass hero-review-card">
+      <div class="hrc-top">
+        <div class="hrc-icon">❝</div>
+        <div>
+          <p class="hrc-quote">"Best salon experience ever"</p>
+          <p class="hrc-author">— Naomi B., Cliente Vérifiée</p>
+        </div>
+      </div>
+      <div class="hrc-bottom">
+        <div class="hrc-stars">★★★★★</div>
+        <span class="hrc-badge">500+ Avis</span>
+      </div>
+    </div>
+    <div class="hglass hero-since">
+      <span>Since 2014</span>
+    </div>
+    <div class="hglass hero-avail-card">
+      <div class="hac-row">
+        <div class="hac-dot"><span class="hac-ping"></span><span class="hac-solid"></span></div>
+        <span class="hac-label">Disponible Aujourd'hui</span>
+      </div>
+      <p class="hac-slot">Prochain créneau : <strong>14h00</strong></p>
+    </div>
+    <svg class="hero-arc" width="120" height="120" viewBox="0 0 120 120" fill="none">
+      <path d="M120 0 Q80 0 80 40 Q80 80 120 80" stroke="rgba(212,163,115,.18)" stroke-width="1.5" fill="none"/>
+      <path d="M120 20 Q90 20 90 50 Q90 90 120 90" stroke="rgba(212,163,115,.10)" stroke-width="1" fill="none"/>
+    </svg>
   </div>
 </section>
 
@@ -637,12 +721,7 @@ window.addEventListener('load',()=>{
 function initHeroGSAP(){
   if(typeof gsap==='undefined')return;
   gsap.registerPlugin(ScrollTrigger);
-  const ids=['he0','he1','he2','he3','he4','he5','he6'];
-  gsap.set(ids.map(id=>'#'+id),{opacity:0,y:35});
-  gsap.set('#he7',{opacity:0,x:70});
-  const tl=gsap.timeline();
-  ids.forEach((id,i)=>tl.to('#'+id,{opacity:1,y:0,duration:.65,ease:'power2.out'},i*0.12));
-  tl.to('#he7',{opacity:1,x:0,duration:1.1,ease:'power3.out'},0);
+  // Hero uses CSS keyframe animations — no GSAP needed here
   // ScrollTrigger for services cards
   gsap.utils.toArray('.svc-card').forEach((c,i)=>{
     gsap.from(c,{scrollTrigger:{trigger:c,start:'top 82%'},y:40,opacity:0,duration:.6,delay:i*0.07,ease:'power2.out'});
