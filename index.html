@@ -719,7 +719,7 @@ function closeMob(){
 /* ═══════════════════════════ RENDER SERVICES ═══════════════════════════ */
 function renderServices(){
   document.getElementById('svc-grid').innerHTML=SVCS.map(s=>`
-    <div class="svc-card-b rv${s.addon?' svc-addons-card':''}">
+    <div class="svc-card-b${s.addon?' svc-addons-card':''}">
       <div class="svc-cb-head">
         <div class="svc-cb-icon">${s.icon}</div>
         <div>
