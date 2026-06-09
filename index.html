@@ -38,10 +38,9 @@ header{position:sticky;top:0;z-index:800;background:#fff;border-bottom:1px solid
 header.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);padding:0 48px}
 .hdr{display:flex;align-items:center;justify-content:space-between;max-width:1320px;margin:0 auto;height:76px;transition:height .3s}
 header.scrolled .hdr{height:64px}
-.logo{display:flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1;gap:1px}
-.logo-crown{color:var(--gold);font-size:14px}
-.logo-script{font-family:'Great Vibes',cursive;font-size:29px;color:var(--pk)}
-.logo-sub{font-size:7.5px;font-weight:800;letter-spacing:5px;text-transform:uppercase}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{height:52px;width:auto;display:block;object-fit:contain}
+.logo-crown,.logo-script,.logo-sub{display:none}
 nav{display:flex;align-items:center;gap:26px}
 nav a{text-decoration:none;font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--dark);position:relative;padding-bottom:4px;transition:color .25s}
 nav a:hover,nav a.active{color:var(--pk)}
@@ -315,9 +314,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 <header id="header">
   <div class="hdr">
     <a href="#home" class="logo">
-      <span class="logo-crown">♛</span>
-      <span class="logo-script">Luxe Beauty</span>
-      <span class="logo-sub">Studio</span>
+      <img src="logo.jpeg" alt="Luxe Beauty Studio">
     </a>
     <nav id="main-nav">
       <a href="#home" class="active">Accueil</a>
@@ -495,10 +492,8 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 <footer>
   <div class="ft-grid">
     <div>
-      <div style="display:flex;flex-direction:column;align-items:flex-start;margin-bottom:14px">
-        <span style="color:var(--gold);font-size:13px">♛</span>
-        <span style="font-family:'Great Vibes',cursive;font-size:26px;color:var(--pk);line-height:1">Luxe Beauty</span>
-        <span style="font-size:7.5px;font-weight:800;letter-spacing:5px;text-transform:uppercase">Studio</span>
+      <div style="margin-bottom:14px">
+        <img src="logo.jpeg" alt="Luxe Beauty Studio" style="height:48px;width:auto;display:block;object-fit:contain">
       </div>
       <p class="ft-desc">Votre beauté est notre passion. Des services luxueux, des résultats exceptionnels.</p>
       <div class="ft-soc">
