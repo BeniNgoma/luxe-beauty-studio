@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--pk:#e01d88;--pkd:#b8146e;--gold:#c9a84c;--pale:#fdf7fb;--dark:#1a1a1a;--gray:#666;--lg:#999;--bdr:#f0dce8}
+:root{--pk:#C9A84C;--pkd:#A8860A;--gold:#C9A84C;--pale:#FEFDF4;--dark:#1a1a1a;--gray:#666;--lg:#999;--bdr:#EAD98E}
 html{scroll-behavior:smooth}
 body{font-family:'Montserrat',sans-serif;color:var(--dark);overflow-x:hidden}
 
@@ -18,7 +18,7 @@ body{font-family:'Montserrat',sans-serif;color:var(--dark);overflow-x:hidden}
 .pre-crown{color:var(--gold);font-size:28px;animation:preFloat 1.2s ease-in-out infinite}
 .pre-script{font-family:'Great Vibes',cursive;font-size:52px;color:var(--pk);line-height:1}
 .pre-sub{font-size:9px;font-weight:800;letter-spacing:6px;text-transform:uppercase;margin-bottom:20px}
-.pre-bar{width:180px;height:2px;background:#f0e0e8;border-radius:2px;overflow:hidden}
+.pre-bar{width:180px;height:2px;background:#F0E4A8;border-radius:2px;overflow:hidden}
 .pre-fill{height:100%;background:var(--pk);border-radius:2px;animation:preLoad 2s ease forwards}
 @keyframes preFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes preLoad{from{width:0}to{width:100%}}
@@ -39,7 +39,7 @@ header.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08);padding:0 48px}
 .hdr{display:flex;align-items:center;justify-content:space-between;max-width:1320px;margin:0 auto;height:76px;transition:height .3s}
 header.scrolled .hdr{height:64px}
 .logo{display:flex;align-items:center;text-decoration:none}
-.logo img{height:72px;width:auto;display:block;object-fit:contain}
+.logo img{height:90px;width:auto;display:block;object-fit:contain}
 .logo-crown,.logo-script,.logo-sub{display:none}
 nav{display:flex;align-items:center;gap:26px}
 nav a{text-decoration:none;font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--dark);position:relative;padding-bottom:4px;transition:color .25s}
@@ -71,8 +71,8 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .btn-out:hover{background:var(--pk);color:#fff}
 
 /* ── HERO ── */
-:root{--rose:#C07268;--rose-h:#A85F57}
-.hero{display:flex;align-items:stretch;min-height:460px;background:#FAF7F5;overflow:hidden}
+:root{--rose:#C9A84C;--rose-h:#A8860A}
+.hero{display:flex;align-items:stretch;min-height:460px;background:#FEFDF4;overflow:hidden}
 .hero-left{flex:1;padding:60px 48px 60px 80px;display:flex;flex-direction:column;justify-content:center}
 .hero-label{font-size:9px;font-weight:800;letter-spacing:.38em;text-transform:uppercase;color:var(--rose);margin-bottom:16px;opacity:0;animation:hRise .6s cubic-bezier(.22,1,.36,1) .15s forwards}
 .hero-h1-new{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.2vw,4.6rem);font-weight:700;line-height:1.06;letter-spacing:-.025em;color:#1A1A1A;margin:0;opacity:0;animation:hRise .75s cubic-bezier(.22,1,.36,1) .28s forwards}
@@ -81,11 +81,11 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .hero-btns-new{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;opacity:0;animation:hRise .7s cubic-bezier(.22,1,.36,1) .75s forwards}
 .btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--rose);color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:13px 26px;border-radius:5px;text-decoration:none;transition:background .25s,transform .2s}
 .btn-gold:hover{background:var(--rose-h);transform:translateY(-2px)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(192,114,104,.32);color:var(--rose);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:13px 26px;border-radius:5px;text-decoration:none;transition:background .25s,transform .2s}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(201,168,76,.38);color:var(--rose);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:13px 26px;border-radius:5px;text-decoration:none;transition:background .25s,transform .2s}
 .btn-ghost:hover{background:rgba(192,114,104,.07);transform:translateY(-2px)}
 .hero-right-new{flex:0 0 46%;overflow:hidden;position:relative}
 .hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:60% top;display:block}
-.hero-right-new::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#FAF7F5 0%,rgba(250,247,245,.55) 10%,transparent 28%);z-index:1;pointer-events:none}
+.hero-right-new::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#FEFDF4 0%,rgba(254,253,244,.55) 10%,transparent 28%);z-index:1;pointer-events:none}
 @keyframes hRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
 /* ── SECTION HEADER ── */
@@ -172,7 +172,7 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .gal-item{aspect-ratio:3/4;overflow:hidden;position:relative;cursor:pointer}
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease;display:block}
 .gal-item:hover img{transform:scale(1.08)}
-.gal-ov{position:absolute;inset:0;background:rgba(224,29,136,.72);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.gal-ov{position:absolute;inset:0;background:rgba(201,168,76,.80);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
 .gal-item:hover .gal-ov{opacity:1}
 .gal-ov span{color:#fff;font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:0 8px}
 .gal-more{text-align:center}
@@ -242,7 +242,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 /* ── FLOATING ── */
 .f-wa{position:fixed;bottom:84px;right:22px;z-index:600;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 18px rgba(0,0,0,.2);transition:transform .25s}
 .f-wa:hover{transform:scale(1.1)}
-.f-top{position:fixed;bottom:22px;right:22px;z-index:600;width:44px;height:44px;border-radius:50%;background:var(--pk);color:#fff;border:none;cursor:pointer;font-size:18px;display:none;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(224,29,136,.35);transition:all .25s}
+.f-top{position:fixed;bottom:22px;right:22px;z-index:600;width:44px;height:44px;border-radius:50%;background:var(--pk);color:#fff;border:none;cursor:pointer;font-size:18px;display:none;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(201,168,76,.35);transition:all .25s}
 .f-top.on{display:flex}
 .f-top:hover{transform:translateY(-3px)}
 
@@ -406,7 +406,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
           <select id="bk-time"><option value="">Sélectionnez une heure</option><option>9h00</option><option>10h00</option><option>11h00</option><option>12h00</option><option>14h00</option><option>15h00</option><option>16h00</option><option>17h00</option></select>
         </div>
         <div style="display:flex;gap:8px;margin-top:4px">
-          <button class="btn-bk" style="background:#f0dce8;color:var(--pk);flex:1" onclick="bkBack(2)">← Retour</button>
+          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(2)">← Retour</button>
           <button class="btn-bk" style="flex:2" onclick="bkNext(2)">Continuer →</button>
         </div>
       </div>
@@ -419,7 +419,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
         <div class="fg"><input type="email" id="bk-email" placeholder="Email"></div>
         <div class="fg"><textarea id="bk-notes" placeholder="Notes (Optionnel)"></textarea></div>
         <div style="display:flex;gap:8px">
-          <button class="btn-bk" style="background:#f0dce8;color:var(--pk);flex:1" onclick="bkBack(3)">← Retour</button>
+          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(3)">← Retour</button>
           <button class="btn-bk" style="flex:2" onclick="bkNext(3)">Continuer →</button>
         </div>
       </div>
@@ -427,7 +427,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
       <div class="fstep" id="fs4">
         <div class="bk-summary" id="bk-sum"></div>
         <div style="display:flex;gap:8px">
-          <button class="btn-bk" style="background:#f0dce8;color:var(--pk);flex:1" onclick="bkBack(4)">← Retour</button>
+          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(4)">← Retour</button>
           <button class="btn-bk" style="flex:2" onclick="bkSubmit()">Confirmer &amp; Payer</button>
         </div>
         <div class="pay-row" style="margin-top:10px">
