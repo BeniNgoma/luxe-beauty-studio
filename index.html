@@ -95,29 +95,29 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .scd{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);margin:8px auto 0}
 
 /* ── SERVICES ── */
-.services{padding:68px 52px 80px;background:#fff}
-.svc-grid-b{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:0 auto}
-.svc-card-b{background:#fff;border:1px solid rgba(0,0,0,.08);padding:22px 20px 18px;transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column}
-.svc-card-b:hover{box-shadow:0 8px 32px rgba(0,0,0,.09);transform:translateY(-3px)}
-.svc-cb-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
-.svc-cb-icon{width:42px;height:42px;min-width:42px;border-radius:50%;background:var(--rose);display:flex;align-items:center;justify-content:center}
-.svc-cb-icon svg{width:22px;height:22px}
-.svc-cb-name{font-size:15px;font-weight:700;color:#1A1A1A;margin:0 0 7px}
-.svc-cb-divider{height:2px;width:36px;background:var(--rose);opacity:.5;border-radius:2px}
-.svc-cb-body{display:flex;gap:14px;flex:1;margin-bottom:18px}
-.svc-cb-img{width:118px;height:118px;min-width:118px;object-fit:cover;border-radius:4px}
-.svc-cb-list{list-style:none;flex:1;padding:0;margin:0}
-.svc-cb-list li{font-size:11.5px;color:rgba(26,26,26,.62);padding:2.5px 0 2.5px 12px;position:relative;line-height:1.45}
-.svc-cb-list li::before{content:'•';position:absolute;left:0;color:var(--rose);font-size:9px;top:4px}
-.svc-cb-lnk{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--rose);text-decoration:none;letter-spacing:.02em;transition:gap .2s,color .2s}
-.svc-cb-lnk:hover{gap:10px;color:var(--rose-h)}
-.svc-cb-lnk::after{content:'→'}
-.svc-addons-card{grid-column:1/-1;flex-direction:row;align-items:center;gap:28px;padding:24px 28px}
-.svc-addons-card .svc-cb-body{margin-bottom:0;flex:1}
-.svc-addons-card .svc-cb-img{width:180px;height:120px;min-width:180px}
+.services{padding:80px 52px;background:#F9F7F0}
+.svc-grid-b{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto}
+.svc-card-b{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 18px rgba(0,0,0,.07);transition:box-shadow .4s,transform .4s;display:flex;flex-direction:column}
+.svc-card-b:hover{box-shadow:0 20px 52px rgba(0,0,0,.14);transform:translateY(-6px)}
+.svc-photo-wrap{position:relative;height:220px;overflow:hidden;flex-shrink:0}
+.svc-photo-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;display:block}
+.svc-card-b:hover .svc-photo-wrap img{transform:scale(1.08)}
+.svc-photo-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.18) 55%,transparent 100%);pointer-events:none;z-index:1}
+.svc-photo-label{position:absolute;bottom:14px;left:16px;right:16px;z-index:2;display:flex;align-items:center;gap:10px}
+.svc-photo-icon{width:36px;height:36px;min-width:36px;border-radius:50%;background:var(--pk);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.svc-photo-icon svg{width:18px;height:18px}
+.svc-photo-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;line-height:1.2;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.svc-gold-bar{height:3px;background:linear-gradient(to right,var(--pk),var(--pkd));flex-shrink:0}
+.svc-cb-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.svc-cb-list{list-style:none;flex:1;padding:0;margin:0 0 18px}
+.svc-cb-list li{font-size:11.5px;color:rgba(26,26,26,.64);padding:5px 0 5px 16px;position:relative;line-height:1.5;border-bottom:1px solid rgba(0,0,0,.05)}
+.svc-cb-list li:last-child{border-bottom:none}
+.svc-cb-list li::before{content:'';position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--pk)}
+.svc-cb-lnk{display:block;text-align:center;background:var(--pk);color:#fff;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:13px 16px;border-radius:3px;text-decoration:none;transition:background .25s,letter-spacing .25s;margin-top:auto}
+.svc-cb-lnk:hover{background:var(--pkd);letter-spacing:.28em}
+.svc-addons-card{grid-column:1/-1}
+.svc-addons-card .svc-photo-wrap{height:180px}
 .svc-addons-card .svc-cb-list{columns:2;gap:16px}
-.svc-addons-card .svc-cb-head{margin-bottom:0;align-self:flex-start;flex-direction:column;align-items:flex-start;gap:10px;padding-right:28px;border-right:1px solid rgba(192,114,104,.18);min-width:120px}
-.svc-addons-card .svc-cb-lnk{margin-top:12px}
 
 /* ── ABOUT + BOOKING ── */
 .ab{padding:80px 52px;background:var(--pale)}
@@ -252,7 +252,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 #toast.err{background:#c0392b}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1100px){.svc-grid-b{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){.svc-grid-b{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:repeat(3,1fr)}.svc-addons-card .svc-cb-list{columns:1}}
 @media(max-width:900px){.ab-grid{grid-template-columns:1fr;gap:28px}.gal-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){
   header{padding:0 20px}
@@ -266,12 +266,12 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
   nav{display:none}
   .hdr-btn{display:none}
   .hamburger{display:flex}
-  .svc-grid-b{grid-template-columns:1fr}.svc-addons-card{flex-direction:column}.svc-addons-card .svc-cb-head{flex-direction:row;border-right:none;border-bottom:1px solid rgba(192,114,104,.18);padding-right:0;padding-bottom:14px;min-width:unset;width:100%}.svc-addons-card .svc-cb-list{columns:1}
+  .svc-grid-b{grid-template-columns:1fr}.svc-addons-card .svc-cb-list{columns:1}
   .gal-grid{grid-template-columns:repeat(2,1fr)}
   .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
   .services,.gallery,.ab,.testi,footer{padding-left:20px;padding-right:20px}
 }
-@media(max-width:480px){.svc-grid-b{grid-template-columns:1fr}.svc-addons-card{flex-direction:column}.svc-addons-card .svc-cb-head{flex-direction:row;border-right:none;border-bottom:1px solid rgba(192,114,104,.18);padding-right:0;padding-bottom:14px;min-width:unset;width:100%}.svc-addons-card .svc-cb-list{columns:1}.gal-grid{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.svc-grid-b{grid-template-columns:1fr}.svc-addons-card .svc-cb-list{columns:1}.gal-grid{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -566,43 +566,43 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 /* ═══════════════════════════ DATA ═══════════════════════════ */
 const SVCS=[
   {id:'makeup',name:'Makeup Services',
-   photo:'https://images.pexels.com/photos/7446906/pexels-photo-7446906.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/7446906/pexels-photo-7446906.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><rect x="10" y="2" width="4" height="9" rx="2"/><rect x="10.5" y="11" width="3" height="8" rx="1.5"/><line x1="9" y1="19" x2="15" y2="19"/></svg>',
    list:['Soft Glam Makeup','Full Glam Makeup','Natural Makeup','Bridal Makeup','Bridal Trial Makeup','Bridesmaid Makeup','Mother of Bride/Groom Makeup','Prom Makeup','Graduation Makeup','Special Event Makeup','Photoshoot Makeup','Birthday Makeup']},
   {id:'lashes',name:'Lash Services',
-   photo:'https://images.pexels.com/photos/5128222/pexels-photo-5128222.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/5128222/pexels-photo-5128222.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 13Q8 9 12 10Q16 9 20 13"/><ellipse cx="12" cy="15" rx="8" ry="3"/><line x1="7" y1="10" x2="6" y2="6"/><line x1="10" y1="9.5" x2="9.5" y2="5.5"/><line x1="12" y1="9" x2="12" y2="5"/><line x1="14" y1="9.5" x2="14.5" y2="5.5"/><line x1="17" y1="10" x2="18" y2="6"/></svg>',
    list:['Classic Lash Extensions','Hybrid Lash Extensions','Volume Lash Extensions','Lash Fill','Lash Lift','Lash Lift & Tint','Lash Removal']},
   {id:'brows',name:'Brow Services',
-   photo:'https://images.pexels.com/photos/5128220/pexels-photo-5128220.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/5128220/pexels-photo-5128220.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 10Q7 6 12 7.5Q17 6 21 10"/><path d="M3 15Q7 11 12 12.5Q17 11 21 15"/></svg>',
    list:['Brow Waxing','Brow Shaping','Brow Tinting','Brow Lamination','Brow Lamination & Tint']},
   {id:'facials',name:'Facial Services',
-   photo:'https://images.pexels.com/photos/7479654/pexels-photo-7479654.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/7479654/pexels-photo-7479654.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="10" r="6"/><circle cx="9.5" cy="9" r=".7" fill="#fff" stroke="none"/><circle cx="14.5" cy="9" r=".7" fill="#fff" stroke="none"/><path d="M9 12.5Q12 15.5 15 12.5"/><line x1="12" y1="16" x2="12" y2="20"/></svg>',
    list:['Signature Facial','Express Facial','Deep Cleansing Facial','Hydrating Facial','Acne Facial','Brightening Facial','Anti-Aging Facial']},
   {id:'waxing',name:'Waxing Services',
-   photo:'https://images.pexels.com/photos/7446675/pexels-photo-7446675.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/7446675/pexels-photo-7446675.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="3" width="10" height="17" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="14" x2="17" y2="14"/></svg>',
    list:['Eyebrow Wax','Lip Wax','Chin Wax','Full Face Wax','Underarm Wax','Bikini Wax','Brazilian Wax','Half Leg Wax','Full Leg Wax']},
   {id:'bridal',name:'Bridal Services',
-   photo:'https://images.pexels.com/photos/9733839/pexels-photo-9733839.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/9733839/pexels-photo-9733839.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="6" r="3.5"/><path d="M5 20Q5 14 12 13Q19 14 19 20"/><path d="M2 8Q6 6 12 9Q18 6 22 8"/></svg>',
    list:['Bridal Makeup','Bridal Hair Styling','Bridal Hair & Makeup Package','Bridal Trial Hair','Bridal Trial Makeup','Bridesmaid Hair & Makeup','Mother of Bride/Groom Hair & Makeup','Wedding Touch-Up Services','Destination Bridal Services']},
   {id:'wigs',name:'Wig Services',
-   photo:'https://images.pexels.com/photos/6923414/pexels-photo-6923414.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/6923414/pexels-photo-6923414.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="10" r="4"/><path d="M6 8.5Q5 4 9 3.5Q12 3 15 3.5Q19 4 18 8.5"/><path d="M6 10Q4 15 7 19Q9 22 12 22Q15 22 17 19Q20 15 18 10"/></svg>',
    list:['Glueless Wig Install','Frontal Wig Install','Closure Wig Install','Wig Customization','Wig Styling','Wig Reinstall','Wig Removal & Wash']},
   {id:'sewins',name:'Sew-In Services',
-   photo:'https://images.pexels.com/photos/7395822/pexels-photo-7395822.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/7395822/pexels-photo-7395822.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M11 3.5L15 20.5"/><circle cx="11" cy="3.5" r="1.5"/><path d="M11 3.5Q7 2.5 6.5 6Q6 9.5 10 9"/><path d="M8 13Q12 9 15 14Q18 19 14 21"/></svg>',
    list:['Traditional Sew-In','Closure Sew-In','Frontal Sew-In','Partial Sew-In','Sew-In Maintenance','Sew-In Take Down']},
   {id:'crochet',name:'Crochet Services',
-   photo:'https://images.pexels.com/photos/6923437/pexels-photo-6923437.jpeg?auto=compress&cs=tinysrgb&w=130&h=130&fit=crop',
+   photo:'https://images.pexels.com/photos/6923437/pexels-photo-6923437.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4Q20 6 19 9Q18.5 11 16.5 10L6 21Q4.5 22.5 5.5 23.5Q6.5 24.5 8 23L18.5 12"/></svg>',
    list:['Crochet Braids','Crochet Twists','Crochet Locs','Crochet Maintenance']},
   {id:'addons',name:'Add-Ons',addon:true,
-   photo:'https://images.pexels.com/photos/10698003/pexels-photo-10698003.jpeg?auto=compress&cs=tinysrgb&w=180&h=120&fit=crop',
+   photo:'https://images.pexels.com/photos/10698003/pexels-photo-10698003.jpeg?auto=compress&cs=tinysrgb&w=600&h=440&fit=crop',
    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="7" y1="12" x2="17" y2="12"/></svg>',
    list:['Strip Lashes','Hair Extensions Installation','Hair Washing & Blow Dry','Travel Fee','Early Morning Appointments','Touch-Up Services']}
 ];
@@ -714,18 +714,18 @@ function closeMob(){
 function renderServices(){
   document.getElementById('svc-grid').innerHTML=SVCS.map(s=>`
     <div class="svc-card-b${s.addon?' svc-addons-card':''}">
-      <div class="svc-cb-head">
-        <div class="svc-cb-icon">${s.icon}</div>
-        <div>
-          <h3 class="svc-cb-name">${s.name}</h3>
-          <div class="svc-cb-divider"></div>
+      <div class="svc-photo-wrap">
+        <img src="${s.photo}" alt="${s.name}" loading="lazy">
+        <div class="svc-photo-label">
+          <div class="svc-photo-icon">${s.icon}</div>
+          <span class="svc-photo-name">${s.name}</span>
         </div>
       </div>
+      <div class="svc-gold-bar"></div>
       <div class="svc-cb-body">
-        <img class="svc-cb-img" src="${s.photo}" alt="${s.name}" loading="lazy">
-        <ul class="svc-cb-list">${s.list.map(i=>`<li>${i}</li>`).join('')}</ul>
+        <ul class="svc-cb-list">${s.list.slice(0,s.addon?6:5).map(i=>`<li>${i}</li>`).join('')}</ul>
+        <a href="#booking" class="svc-cb-lnk">Réserver</a>
       </div>
-      <a href="#booking" class="svc-cb-lnk">Book Now</a>
     </div>`).join('');
 }
 
