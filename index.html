@@ -271,17 +271,22 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 @media(max-width:768px){
   header{padding:0 20px}
   .hero{flex-direction:column;min-height:unset}
-  .hero-right-new{flex:none;height:65vw;min-height:260px;order:-1}
-  .hero-right-new>img{object-position:58% top}
-  .hero-left{padding:32px 28px 48px 28px}
+  .hero-right-new{flex:none;height:360px;min-height:300px;max-height:420px;order:-1}
+  .hero-right-new>img{object-position:center 18%;transition:none}
+  .hero-right-new::before{background:linear-gradient(to bottom,transparent 55%,rgba(254,253,244,.85) 85%,#FEFDF4 100%)}
+  .hero-right-new::after{display:none}
+  .hero-left{padding:24px 24px 44px 24px}
   .hero-left::before{display:none}
-  .hero-h1-new{font-size:2.2rem}
-  .hero-script{font-size:2rem}
-  .hero-desc-new{max-width:100%}
-  .hero-stats{gap:0;margin-top:24px}
-  .hero-stat{padding:0 14px}
-  .hero-stat strong{font-size:20px}
-  .hero-badge{bottom:16px;left:16px;padding:8px 14px}
+  .hero-ornament{margin-bottom:14px}
+  .hero-h1-new{font-size:2rem}
+  .hero-script{font-size:1.9rem}
+  .hero-desc-new{max-width:100%;font-size:12.5px}
+  .hero-btns-new{margin-top:22px}
+  .hero-stats{gap:0;margin-top:22px;justify-content:flex-start}
+  .hero-stat{padding:0 16px}
+  .hero-stat:first-child{padding-left:0}
+  .hero-stat strong{font-size:19px}
+  .hero-badge{bottom:14px;left:14px;padding:7px 12px}
   nav{display:none}
   .hdr-btn{display:none}
   .hamburger{display:flex}
@@ -290,7 +295,13 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
   .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
   .services,.gallery,.ab,.testi,footer{padding-left:20px;padding-right:20px}
 }
-@media(max-width:480px){.svc-grid-b{grid-template-columns:1fr}.svc-addons-card .svc-cb-list{columns:1}.gal-grid{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .hero-right-new{height:300px;min-height:260px}
+  .hero-right-new>img{object-position:center 15%}
+  .hero-h1-new{font-size:1.85rem}
+  .hero-script{font-size:1.75rem}
+  .svc-grid-b{grid-template-columns:1fr}.svc-addons-card .svc-cb-list{columns:1}.gal-grid{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
