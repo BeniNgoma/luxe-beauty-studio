@@ -101,6 +101,7 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;box-shadow:0 0 0 3px rgba(34,197,94,.2)}
 .hero-badge-txt{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#1a1a1a}
 @keyframes hRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes kenBurns{from{transform:scale(1) translateX(0)}to{transform:scale(1.10) translateX(-2%)}}
 
 /* ── SECTION HEADER ── */
 .sch{text-align:center;margin-bottom:48px}
@@ -270,29 +271,30 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 @media(max-width:900px){.ab-grid{grid-template-columns:1fr;gap:28px}.gal-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){
   header{padding:0 20px}
-  /* Hero mobile : photo en background, texte par-dessus */
-  .hero{position:relative;flex-direction:row;min-height:100svh;min-height:100vh;background:#1a1a1a}
-  .hero-right-new{position:absolute;inset:0;flex:none;height:100%;width:100%;overflow:hidden;order:0;z-index:0}
-  .hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:none;display:block}
-  .hero-right-new::before{background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.38) 55%,rgba(0,0,0,.15) 100%)}
+  .hero{flex-direction:column;min-height:unset;background:#FEFDF4;position:static}
+  /* Photo — grande, animée Ken Burns */
+  .hero-right-new{position:relative;flex:none;height:58vmax;min-height:300px;max-height:480px;width:100%;overflow:hidden;order:-1;z-index:0}
+  .hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;transition:none;animation:kenBurns 9s ease-in-out infinite alternate}
+  .hero-right-new::before{background:linear-gradient(to bottom,transparent 50%,rgba(254,253,244,.88) 88%,#FEFDF4 100%)}
   .hero-right-new::after{display:none}
-  .hero-right-new:hover>img{transform:none}
-  .hero-left{position:relative;z-index:2;flex:1;padding:0 24px 52px 24px;display:flex;flex-direction:column;justify-content:flex-end;background:transparent}
+  .hero-right-new:hover>img{animation:kenBurns 9s ease-in-out infinite alternate}
+  /* Badge */
+  .hero-badge{bottom:16px;left:16px;top:auto;padding:7px 13px;animation:none;opacity:1}
+  /* Texte — compact */
+  .hero-left{position:static;z-index:1;padding:16px 22px 44px;background:transparent;justify-content:flex-start}
   .hero-left::before{display:none}
-  .hero-label{color:#EAD98E}
-  .hero-ornament::before,.hero-ornament::after{background:#EAD98E}
-  .hero-ornament{margin-bottom:12px}
-  .hero-h1-new{font-size:2.1rem;color:#fff}
-  .hero-script{font-size:2rem;color:#EAD98E}
-  .hero-desc-new{max-width:100%;font-size:12.5px;color:rgba(255,255,255,.72)}
-  .hero-btns-new{margin-top:22px}
-  .hero-stats{gap:0;margin-top:24px;justify-content:flex-start}
-  .hero-stat{padding:0 18px}
+  .hero-ornament{margin-bottom:10px}
+  .hero-h1-new{font-size:1.75rem;color:#1A1A1A}
+  .hero-script{font-size:1.65rem;color:var(--rose)}
+  .hero-desc-new{font-size:11.5px;max-width:100%;margin-top:10px;color:rgba(26,26,26,.5)}
+  .hero-btns-new{margin-top:16px;gap:8px}
+  .btn-gold,.btn-ghost{padding:11px 18px;font-size:9.5px}
+  .hero-stats{margin-top:18px;gap:0}
+  .hero-stat{padding:0 14px}
   .hero-stat:first-child{padding-left:0}
-  .hero-stat strong{font-size:20px;color:#fff}
-  .hero-stat span{color:rgba(255,255,255,.55)}
-  .hero-stat-sep{background:rgba(255,255,255,.22)}
-  .hero-badge{bottom:auto;top:28px;left:20px;animation:none;opacity:1}
+  .hero-stat strong{font-size:18px;color:#1A1A1A}
+  .hero-stat span{font-size:8px}
+  .hero-stat-sep{background:rgba(0,0,0,.13)}
   nav{display:none}
   .hdr-btn{display:none}
   .hamburger{display:flex}
@@ -302,9 +304,10 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
   .services,.gallery,.ab,.testi,footer{padding-left:20px;padding-right:20px}
 }
 @media(max-width:480px){
-  .hero-h1-new{font-size:1.85rem}
-  .hero-script{font-size:1.75rem}
-  .hero-left{padding:0 20px 44px 20px}
+  .hero-right-new{height:65vmax;min-height:260px}
+  .hero-h1-new{font-size:1.6rem}
+  .hero-script{font-size:1.5rem}
+  .hero-left{padding:14px 18px 36px}
   .svc-grid-b{grid-template-columns:1fr}.svc-addons-card .svc-cb-list{columns:1}.gal-grid{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:1fr}
 }
 </style>
