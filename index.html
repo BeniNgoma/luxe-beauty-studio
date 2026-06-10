@@ -101,7 +101,20 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;box-shadow:0 0 0 3px rgba(34,197,94,.2)}
 .hero-badge-txt{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#1a1a1a}
 @keyframes hRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes kenBurns{from{transform:scale(1) translateX(0)}to{transform:scale(1.10) translateX(-2%)}}
+@keyframes photoReveal{from{transform:scale(1.15) translateY(16px);opacity:0}to{transform:scale(1.06) translateY(0);opacity:1}}
+@keyframes heroFilm{
+  0%  {transform:scale(1.06) translate(0,0)}
+  20% {transform:scale(1.11) translate(-1.5%,.6%)}
+  45% {transform:scale(1.07) translate(-.6%,-1.3%)}
+  72% {transform:scale(1.14) translate(1.2%,.8%)}
+  100%{transform:scale(1.06) translate(0,0)}
+}
+@keyframes lightSweep{
+  0%  {opacity:0;transform:translateX(-100%) skewX(-12deg)}
+  15% {opacity:1}
+  70% {opacity:.7;transform:translateX(200%) skewX(-12deg)}
+  100%{opacity:0;transform:translateX(200%) skewX(-12deg)}
+}
 
 /* ── SECTION HEADER ── */
 .sch{text-align:center;margin-bottom:48px}
@@ -274,10 +287,10 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
   .hero{flex-direction:column;min-height:unset;background:#FEFDF4;position:static}
   /* Photo — grande, animée Ken Burns */
   .hero-right-new{position:relative;flex:none;height:58vmax;min-height:300px;max-height:480px;width:100%;overflow:hidden;order:-1;z-index:0}
-  .hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;transition:none;animation:kenBurns 9s ease-in-out infinite alternate}
-  .hero-right-new::before{background:linear-gradient(to bottom,transparent 50%,rgba(254,253,244,.88) 88%,#FEFDF4 100%)}
-  .hero-right-new::after{display:none}
-  .hero-right-new:hover>img{animation:kenBurns 9s ease-in-out infinite alternate}
+  .hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;transition:none;animation:photoReveal .9s cubic-bezier(.22,1,.36,1) .1s both,heroFilm 18s ease-in-out 1s infinite}
+  .hero-right-new::before{background:linear-gradient(to bottom,transparent 48%,rgba(254,253,244,.9) 86%,#FEFDF4 100%);z-index:2}
+  .hero-right-new::after{display:block;content:'';position:absolute;inset:0;width:60px;background:linear-gradient(to right,transparent,rgba(255,255,255,.18) 50%,transparent);pointer-events:none;z-index:3;animation:lightSweep 5s ease-in-out 2.5s infinite}
+  .hero-right-new:hover>img{animation:photoReveal .9s cubic-bezier(.22,1,.36,1) .1s both,heroFilm 18s ease-in-out 1s infinite}
   /* Badge */
   .hero-badge{bottom:16px;left:16px;top:auto;padding:7px 13px;animation:none;opacity:1}
   /* Texte — compact */
