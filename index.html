@@ -73,8 +73,8 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 /* ── HERO PREMIUM ── */
 :root{--rose:#C9A84C;--rose-h:#A8860A}
 .hero{position:relative;width:100%;height:100vh;height:100svh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end;background:#050302}
-.hero-bg{position:absolute;inset:-25% 0;will-change:transform;overflow:hidden}
-#hero-img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;will-change:transform,filter;transform:scale(1.08);filter:blur(16px);opacity:0}
+.hero-bg{position:absolute;inset:0;background:#050302;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#hero-img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1.0);height:100%;width:auto;max-width:none;min-width:60%;display:block;will-change:transform,filter;filter:blur(16px);opacity:0;object-fit:unset}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,2,1,.95) 0%,rgba(4,2,1,.62) 38%,rgba(4,2,1,.28) 65%,rgba(4,2,1,.10) 100%);z-index:1}
 .hero-overlay::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(4,2,1,.45) 0%,transparent 55%)}
 .hero-gold-bar{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 0%,rgba(201,168,76,.7) 25%,rgba(201,168,76,.95) 50%,rgba(201,168,76,.7) 75%,transparent 100%);z-index:3}
@@ -746,16 +746,16 @@ function initHeroGSAP(){
   const img=document.getElementById('hero-img');
   const heroBg=document.getElementById('hero-bg');
 
-  /* 1. Image reveal: blur → sharp */
+  /* 1. Image reveal: blur → sharp, photo entière visible */
   gsap.to(img,{
-    opacity:1,filter:'blur(0px)',scale:1.04,
+    opacity:1,filter:'blur(0px)',
     duration:2.2,ease:'power2.out',
     onComplete(){
-      /* 2. Ken Burns multi-phase (échelle modérée pour rester dans les bords) */
+      /* 2. Ken Burns subtil — petit zoom pour ne pas rogner */
       const tl=gsap.timeline({repeat:-1,yoyo:true});
-      tl.to(img,{scale:1.09,x:'-1.2%',y:'.5%',duration:22,ease:'sine.inOut'})
-        .to(img,{scale:1.06,x:'.4%',y:'-.8%',duration:18,ease:'sine.inOut'})
-        .to(img,{scale:1.10,x:'.8%',y:'.3%',duration:20,ease:'sine.inOut'});
+      tl.to(img,{scale:1.06,x:'-0.8%',y:'.3%',duration:22,ease:'sine.inOut'})
+        .to(img,{scale:1.04,x:'.3%',y:'-.5%',duration:18,ease:'sine.inOut'})
+        .to(img,{scale:1.07,x:'.5%',y:'.2%',duration:20,ease:'sine.inOut'});
     }
   });
 
@@ -777,18 +777,18 @@ function initHeroGSAP(){
   /* 7. Scroll hint + badge */
   gsap.to(['.hero-scroll','.hero-badge'],{opacity:1,duration:.7,ease:'power2.out',delay:2.8});
 
-  /* 8. Mouse parallax — appliqué à l'image (desktop only) */
+  /* 8. Mouse parallax — léger, desktop only */
   if(window.innerWidth>768){
     window.addEventListener('mousemove',e=>{
-      const mx=(e.clientX/window.innerWidth-.5)*18;
-      const my=(e.clientY/window.innerHeight-.5)*10;
-      gsap.to(img,{x:mx,y:my,duration:1.9,ease:'power1.out'});
+      const mx=(e.clientX/window.innerWidth-.5)*14;
+      const my=(e.clientY/window.innerHeight-.5)*8;
+      gsap.to(heroBg,{x:mx,y:my,duration:1.9,ease:'power1.out'});
     },{passive:true});
   }
 
-  /* 9. Scroll parallax — appliqué à l'image, pas au conteneur */
-  gsap.to(img,{
-    y:'18%',ease:'none',
+  /* 9. Scroll parallax sur le conteneur bg */
+  gsap.to(heroBg,{
+    y:'12%',ease:'none',
     scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.2}
   });
 
