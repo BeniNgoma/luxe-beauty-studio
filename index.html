@@ -93,7 +93,7 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 .hero-stat span{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:4px;display:block}
 .hero-stat-sep{width:1px;height:32px;background:rgba(255,255,255,.18);flex-shrink:0}
 .hero-right-new{flex:0 0 47%;overflow:hidden;position:relative}
-.hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:60% top;display:block;transition:transform 8s ease}
+.hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:60% 0%;display:block;transition:transform 8s ease}
 .hero-right-new:hover>img{transform:scale(1.04)}
 .hero-right-new::before{display:none}
 .hero-right-new::after{display:none}
@@ -287,7 +287,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
   .hero{flex-direction:column;min-height:unset;background:#050302;position:static}
   /* Photo — grande, animée Ken Burns */
   .hero-right-new{position:relative;flex:none;height:58vmax;min-height:300px;max-height:480px;width:100%;overflow:hidden;order:-1;z-index:0}
-  .hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;transition:none;animation:photoReveal .9s cubic-bezier(.22,1,.36,1) .1s both,heroFilm 18s ease-in-out 1s infinite}
+  .hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:center 0%;display:block;transition:none;animation:photoReveal .9s cubic-bezier(.22,1,.36,1) .1s both,heroFilm 18s ease-in-out 1s infinite}
   .hero-right-new::before{display:block;background:linear-gradient(to bottom,transparent 50%,rgba(5,3,2,.88) 84%,#050302 100%);z-index:2}
   .hero-right-new::after{display:block;content:'';position:absolute;inset:0;width:60px;background:linear-gradient(to right,transparent,rgba(255,255,255,.18) 50%,transparent);pointer-events:none;z-index:3;animation:lightSweep 5s ease-in-out 2.5s infinite}
   .hero-right-new:hover>img{animation:photoReveal .9s cubic-bezier(.22,1,.36,1) .1s both,heroFilm 18s ease-in-out 1s infinite}
