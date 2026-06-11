@@ -280,48 +280,72 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 #toast.err{background:#c0392b}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1100px){.svc-grid-b{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:repeat(3,1fr)}.svc-addons-card .svc-cb-list{columns:1}}
-@media(max-width:900px){.ab-grid{grid-template-columns:1fr;gap:28px}.gal-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){
+  .svc-grid-b{grid-template-columns:repeat(2,1fr)}
+  .ft-grid{grid-template-columns:repeat(3,1fr)}
+  .svc-addons-card .svc-cb-list{columns:1}
+  .hero-left{padding:48px 36px 48px 60px}
+  .hero-left::before{left:36px}
+}
+@media(max-width:960px){
+  .hero-h1-new{font-size:clamp(2rem,4vw,3.4rem)}
+  .hero-script{font-size:clamp(1.9rem,3.8vw,3.2rem)}
+  .hero-left{padding:40px 28px 40px 48px}
+  .hero-left::before{left:28px}
+  .ab-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .ab-grid>div:last-child{grid-column:1/-1}
+}
+@media(max-width:900px){
+  .ab-grid{grid-template-columns:1fr;gap:28px}
+  .gal-grid{grid-template-columns:repeat(3,1fr)}
+}
 @media(max-width:768px){
-  header{padding:0 20px}
+  header{padding:0 16px}
   .hero{flex-direction:column;min-height:unset;background:#050302;position:static}
-  /* Photo — grande, animée Ken Burns */
-  .hero-right-new{position:relative;flex:none;height:58vmax;min-height:300px;max-height:480px;width:100%;overflow:hidden;order:-1;z-index:0}
-  .hero-right-new>img{width:100%;height:100%;object-fit:cover;object-position:center 0%;display:block;transition:none;animation:photoReveal .9s cubic-bezier(.22,1,.36,1) .1s both,heroFilm 18s ease-in-out 1s infinite}
-  .hero-right-new::before{display:block;background:linear-gradient(to bottom,transparent 50%,rgba(5,3,2,.88) 84%,#050302 100%);z-index:2}
-  .hero-right-new::after{display:block;content:'';position:absolute;inset:0;width:60px;background:linear-gradient(to right,transparent,rgba(255,255,255,.18) 50%,transparent);pointer-events:none;z-index:3;animation:lightSweep 5s ease-in-out 2.5s infinite}
+  .hero-right-new{position:relative;flex:none;height:60vw;min-height:280px;max-height:460px;width:100%;overflow:hidden;order:-1;z-index:0}
+  .hero-right-new>img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center 0%;display:block;transition:none;animation:photoReveal .9s cubic-bezier(.22,1,.36,1) .1s both,heroFilm 18s ease-in-out 1s infinite}
+  .hero-right-new::before{display:block;content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(5,3,2,.88) 84%,#050302 100%);z-index:2}
+  .hero-right-new::after{display:block;content:'';position:absolute;inset:0;width:60px;background:linear-gradient(to right,transparent,rgba(255,255,255,.14) 50%,transparent);pointer-events:none;z-index:3;animation:lightSweep 5s ease-in-out 2.5s infinite}
   .hero-right-new:hover>img{animation:photoReveal .9s cubic-bezier(.22,1,.36,1) .1s both,heroFilm 18s ease-in-out 1s infinite}
-  /* Badge */
   .hero-badge{bottom:16px;left:16px;top:auto;padding:7px 13px;animation:none;opacity:1}
-  /* Texte — compact */
-  .hero-left{position:static;z-index:1;padding:16px 22px 44px;background:transparent;justify-content:flex-start}
+  .hero-left{position:static;z-index:1;padding:20px 20px 44px;background:transparent;justify-content:flex-start}
   .hero-left::before{display:none}
   .hero-ornament{margin-bottom:10px}
-  .hero-h1-new{font-size:1.75rem;color:#fff}
-  .hero-script{font-size:1.65rem;color:var(--rose)}
-  .hero-desc-new{font-size:11.5px;max-width:100%;margin-top:10px;color:rgba(255,255,255,.5)}
+  .hero-h1-new{font-size:1.8rem;color:#fff}
+  .hero-script{font-size:1.7rem;color:var(--rose)}
+  .hero-desc-new{font-size:12px;max-width:100%;margin-top:10px;color:rgba(255,255,255,.5)}
   .hero-btns-new{margin-top:16px;gap:8px}
-  .btn-gold,.btn-ghost{padding:11px 18px;font-size:9.5px}
-  .hero-stats{margin-top:18px;gap:0}
-  .hero-stat{padding:0 14px}
+  .btn-gold,.btn-ghost{padding:12px 20px;font-size:9.5px}
+  .hero-stats{margin-top:20px;gap:0}
+  .hero-stat{padding:0 16px}
   .hero-stat:first-child{padding-left:0}
-  .hero-stat strong{font-size:18px;color:#fff}
+  .hero-stat strong{font-size:20px;color:#fff}
   .hero-stat span{font-size:8px}
   .hero-stat-sep{background:rgba(255,255,255,.18)}
   nav{display:none}
   .hdr-btn{display:none}
   .hamburger{display:flex}
-  .svc-grid-b{grid-template-columns:1fr}.svc-addons-card .svc-cb-list{columns:1}
+  .logo img{height:64px}
+  .svc-grid-b{grid-template-columns:1fr}
+  .svc-addons-card .svc-cb-list{columns:1}
   .gal-grid{grid-template-columns:repeat(2,1fr)}
-  .ft-grid{grid-template-columns:1fr 1fr;gap:28px}
-  .services,.gallery,.ab,.testi,footer{padding-left:20px;padding-right:20px}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .services,.gallery,.ab,.testi,footer{padding-left:18px;padding-right:18px}
+  .ab-grid{grid-template-columns:1fr;gap:24px}
 }
 @media(max-width:480px){
-  .hero-right-new{height:65vmax;min-height:260px}
-  .hero-h1-new{font-size:1.6rem}
-  .hero-script{font-size:1.5rem}
-  .hero-left{padding:14px 18px 36px}
-  .svc-grid-b{grid-template-columns:1fr}.svc-addons-card .svc-cb-list{columns:1}.gal-grid{grid-template-columns:repeat(2,1fr)}.ft-grid{grid-template-columns:1fr}
+  .hero-right-new{height:70vw;min-height:240px}
+  .hero-h1-new{font-size:1.55rem}
+  .hero-script{font-size:1.45rem}
+  .hero-left{padding:16px 16px 36px}
+  .hero-stats{flex-wrap:wrap;gap:12px}
+  .hero-stat-sep{display:none}
+  .hero-stat{padding:0}
+  .svc-grid-b{grid-template-columns:1fr}
+  .svc-addons-card .svc-cb-list{columns:1}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .ft-grid{grid-template-columns:1fr}
+  .fg-row{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -350,14 +374,14 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 <div id="mob-ov"></div>
 <div id="mob-menu">
   <button class="mob-close" id="mob-x">&times;</button>
-  <a href="#home" onclick="closeMob()">Accueil</a>
-  <a href="#about" onclick="closeMob()">À Propos</a>
+  <a href="#home" onclick="closeMob()">Home</a>
+  <a href="#about" onclick="closeMob()">About</a>
   <a href="#services" onclick="closeMob()">Services</a>
-  <a href="#galerie" onclick="closeMob()">Galerie</a>
+  <a href="#galerie" onclick="closeMob()">Gallery</a>
   <a href="#booking" onclick="closeMob()">Booking</a>
   <a href="#" onclick="closeMob()">Packages</a>
   <a href="#" onclick="closeMob()">Contact</a>
-  <a href="#booking" class="mob-cta" onclick="closeMob()">Prendre Rendez-vous</a>
+  <a href="#booking" class="mob-cta" onclick="closeMob()">Book Now</a>
 </div>
 
 <!-- HEADER -->
@@ -367,16 +391,16 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
       <img src="logo.jpeg" alt="Benie Beauty">
     </a>
     <nav id="main-nav">
-      <a href="#home" class="active">Accueil</a>
-      <a href="#about">À Propos</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
       <a href="#services">Services ▾</a>
-      <a href="#galerie">Galerie</a>
+      <a href="#galerie">Gallery</a>
       <a href="#booking">Booking</a>
       <a href="#">Packages</a>
       <a href="#">Contact</a>
     </nav>
     <div class="hdr-right">
-      <a href="#booking" class="hdr-btn">Prendre Rendez-vous</a>
+      <a href="#booking" class="hdr-btn">Book Now</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -394,13 +418,13 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
       Beauty. Confidence.
       <span class="hero-script">Perfected for You.</span>
     </h1>
-    <p class="hero-desc-new">Nous offrons une gamme complète de services beauté professionnels, conçus pour sublimer votre beauté naturelle et vous faire rayonner à chaque occasion.</p>
+    <p class="hero-desc-new">We offer a complete range of professional beauty services, crafted to enhance your natural beauty and make you shine at every occasion.</p>
     <div class="hero-btns-new">
-      <a href="#booking" class="btn-gold">Prendre Rendez-vous</a>
-      <a href="#services" class="btn-ghost">Nos Services</a>
+      <a href="#booking" class="btn-gold">Book Now</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><strong>500+</strong><span>Clientes</span></div>
+      <div class="hero-stat"><strong>500+</strong><span>Clients</span></div>
       <div class="hero-stat-sep"></div>
       <div class="hero-stat"><strong>10+</strong><span>Services</span></div>
       <div class="hero-stat-sep"></div>
@@ -411,7 +435,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
     <img src="photo-hero.jpeg" alt="Benie Beauty — salon luxe">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      <span class="hero-badge-txt">Disponible Aujourd'hui</span>
+      <span class="hero-badge-txt">Available Today</span>
     </div>
   </div>
 </section>
@@ -419,7 +443,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="sch rv">
-    <h2 class="sct">Nos Services</h2>
+    <h2 class="sct">Our Services</h2>
     <div class="scd"></div>
   </div>
   <div class="svc-grid-b" id="svc-grid"></div>
@@ -429,37 +453,37 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 <section class="ab" id="about">
   <div class="ab-grid">
     <div class="rv rvl">
-      <p class="ab-lbl">À Propos de Nous</p>
-      <h2 class="ab-tit">Votre beauté,<br>notre passion</h2>
-      <p class="ab-dsc">Chez <strong>Benie Beauty</strong>, nous croyons que chaque femme mérite de se sentir belle et confiante. Notre équipe d'expertes vous offre des services personnalisés avec des produits de qualité dans un cadre luxueux et relaxant.</p>
+      <p class="ab-lbl">About Us</p>
+      <h2 class="ab-tit">Your beauty,<br>our passion</h2>
+      <p class="ab-dsc">At <strong>Benie Beauty</strong>, we believe every woman deserves to feel beautiful and confident. Our team of experts offers personalized services using quality products in a luxurious and relaxing setting.</p>
       <ul class="ab-ul">
-        <li>Équipe professionnelle et passionnée</li>
-        <li>Hygiène et sécurité garanties</li>
-        <li>Ambiance luxueuse et chaleureuse</li>
-        <li>Résultats exceptionnels</li>
+        <li>Professional and passionate team</li>
+        <li>Hygiene and safety guaranteed</li>
+        <li>Luxurious and welcoming atmosphere</li>
+        <li>Exceptional results every time</li>
       </ul>
-      <a href="#" class="btn-out">En Savoir Plus</a>
+      <a href="#" class="btn-out">Learn More</a>
     </div>
     <div class="rv">
       <div class="ab-img"><img src="https://images.pexels.com/photos/7823407/pexels-photo-7823407.jpeg?auto=compress&cs=tinysrgb&w=500&h=420&fit=crop" alt="Salon Benie Beauty"></div>
     </div>
     <div class="bk-box rv rvr" id="booking">
-      <p class="bk-lbl">Prendre Rendez-vous</p>
+      <p class="bk-lbl">Book an Appointment</p>
       <div class="bk-steps" id="bk-steps">
         <div class="bk-step"><div class="bk-num on" id="sn1">1</div><span class="bk-sl">Service</span></div>
         <div class="bk-line"></div>
-        <div class="bk-step"><div class="bk-num" id="sn2">2</div><span class="bk-sl">Date &amp; Heure</span></div>
+        <div class="bk-step"><div class="bk-num" id="sn2">2</div><span class="bk-sl">Date &amp; Time</span></div>
         <div class="bk-line"></div>
-        <div class="bk-step"><div class="bk-num" id="sn3">3</div><span class="bk-sl">Détails</span></div>
+        <div class="bk-step"><div class="bk-num" id="sn3">3</div><span class="bk-sl">Details</span></div>
         <div class="bk-line"></div>
-        <div class="bk-step"><div class="bk-num" id="sn4">4</div><span class="bk-sl">Paiement</span></div>
+        <div class="bk-step"><div class="bk-num" id="sn4">4</div><span class="bk-sl">Payment</span></div>
       </div>
       <!-- Step 1 -->
       <div class="fstep on" id="fs1">
         <div class="fg sel">
-          <select id="bk-svc"><option value="">Sélectionnez un service</option><option>Makeup</option><option>Lashes</option><option>Brows</option><option>Facials</option><option>Waxing</option><option>Bridal</option><option>Wigs</option><option>Sew-Ins</option><option>Crochet</option><option>Add-Ons</option></select>
+          <select id="bk-svc"><option value="">Select a service</option><option>Makeup</option><option>Lashes</option><option>Brows</option><option>Facials</option><option>Waxing</option><option>Bridal</option><option>Wigs</option><option>Sew-Ins</option><option>Crochet</option><option>Add-Ons</option></select>
         </div>
-        <button class="btn-bk" onclick="bkNext(1)">Continuer →</button>
+        <button class="btn-bk" onclick="bkNext(1)">Continue →</button>
       </div>
       <!-- Step 2 -->
       <div class="fstep" id="fs2">
@@ -467,35 +491,35 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
           <input type="date" id="bk-date">
         </div>
         <div class="fg sel">
-          <select id="bk-time"><option value="">Sélectionnez une heure</option><option>9h00</option><option>10h00</option><option>11h00</option><option>12h00</option><option>14h00</option><option>15h00</option><option>16h00</option><option>17h00</option></select>
+          <select id="bk-time"><option value="">Select a time</option><option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option></select>
         </div>
         <div style="display:flex;gap:8px;margin-top:4px">
-          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(2)">← Retour</button>
-          <button class="btn-bk" style="flex:2" onclick="bkNext(2)">Continuer →</button>
+          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(2)">← Back</button>
+          <button class="btn-bk" style="flex:2" onclick="bkNext(2)">Continue →</button>
         </div>
       </div>
       <!-- Step 3 -->
       <div class="fstep" id="fs3">
         <div class="fg-row">
-          <div class="fg"><input type="text" id="bk-name" placeholder="Nom complet"></div>
-          <div class="fg"><input type="tel" id="bk-tel" placeholder="Téléphone"></div>
+          <div class="fg"><input type="text" id="bk-name" placeholder="Full Name"></div>
+          <div class="fg"><input type="tel" id="bk-tel" placeholder="Phone Number"></div>
         </div>
-        <div class="fg"><input type="email" id="bk-email" placeholder="Email"></div>
-        <div class="fg"><textarea id="bk-notes" placeholder="Notes (Optionnel)"></textarea></div>
+        <div class="fg"><input type="email" id="bk-email" placeholder="Email Address"></div>
+        <div class="fg"><textarea id="bk-notes" placeholder="Notes (Optional)"></textarea></div>
         <div style="display:flex;gap:8px">
-          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(3)">← Retour</button>
-          <button class="btn-bk" style="flex:2" onclick="bkNext(3)">Continuer →</button>
+          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(3)">← Back</button>
+          <button class="btn-bk" style="flex:2" onclick="bkNext(3)">Continue →</button>
         </div>
       </div>
       <!-- Step 4 -->
       <div class="fstep" id="fs4">
         <div class="bk-summary" id="bk-sum"></div>
         <div style="display:flex;gap:8px">
-          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(4)">← Retour</button>
-          <button class="btn-bk" style="flex:2" onclick="bkSubmit()">Confirmer &amp; Payer</button>
+          <button class="btn-bk" style="background:#F5EBB8;color:var(--pk);flex:1" onclick="bkBack(4)">← Back</button>
+          <button class="btn-bk" style="flex:2" onclick="bkSubmit()">Confirm &amp; Pay</button>
         </div>
         <div class="pay-row" style="margin-top:10px">
-          <span class="pay-lbl">Paiement sécurisé</span>
+          <span class="pay-lbl">Secure Payment</span>
           <span class="pay-b" style="color:#1a1f71;font-style:italic">VISA</span>
           <span class="pay-b" style="color:#eb001b">MC</span>
           <span class="pay-b">Apple Pay</span>
@@ -507,9 +531,9 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
       <div class="fstep" id="fs-ok">
         <div class="bk-success">
           <div class="ok-icon">🎉</div>
-          <h3>Réservation Confirmée !</h3>
-          <p>Merci pour votre réservation.<br>Vous recevrez une confirmation par email.</p>
-          <button class="btn-new" onclick="bkReset()">Nouveau Rendez-vous</button>
+          <h3>Booking Confirmed!</h3>
+          <p>Thank you for your booking.<br>You will receive a confirmation by email.</p>
+          <button class="btn-new" onclick="bkReset()">New Appointment</button>
         </div>
       </div>
     </div>
@@ -519,26 +543,26 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
 <!-- GALLERY -->
 <section class="gallery" id="galerie">
   <div class="sch rv">
-    <h2 class="sct">Notre Galerie</h2>
+    <h2 class="sct">Our Gallery</h2>
     <div class="scd"></div>
   </div>
   <div class="gal-filters rv" id="gal-filters">
-    <button class="gal-btn on" data-f="all">Tout</button>
+    <button class="gal-btn on" data-f="all">All</button>
     <button class="gal-btn" data-f="makeup">Makeup</button>
     <button class="gal-btn" data-f="lashes">Lashes</button>
     <button class="gal-btn" data-f="hair">Hair</button>
     <button class="gal-btn" data-f="bridal">Bridal</button>
-    <button class="gal-btn" data-f="wigs">Wigss</button>
+    <button class="gal-btn" data-f="wigs">Wigs</button>
     <button class="gal-btn" data-f="facials">Facials</button>
   </div>
   <div class="gal-grid" id="gal-grid"></div>
-  <div class="gal-more rv"><a href="#" class="btn-pk">Voir plus de photos</a></div>
+  <div class="gal-more rv"><a href="#" class="btn-pk">View More Photos</a></div>
 </section>
 
 <!-- TESTIMONIALS -->
 <section class="testi" id="testi">
   <div class="sch rv">
-    <h2 class="sct">Ce que disent nos Clientes</h2>
+    <h2 class="sct">What Our Clients Say</h2>
     <div class="scd"></div>
   </div>
   <div class="testi-outer rv">
@@ -558,7 +582,7 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
       <div style="margin-bottom:14px">
         <img src="logo.jpeg" alt="Benie Beauty" style="height:64px;width:auto;display:block;object-fit:contain">
       </div>
-      <p class="ft-desc">Votre beauté est notre passion. Des services luxueux, des résultats exceptionnels.</p>
+      <p class="ft-desc">Your beauty is our passion. Luxury services, exceptional results.</p>
       <div class="ft-soc">
         <a href="#" class="ft-si"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
         <a href="#" class="ft-si"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
@@ -567,18 +591,18 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
       </div>
     </div>
     <div>
-      <p class="ft-h">Liens Rapides</p>
+      <p class="ft-h">Quick Links</p>
       <ul class="ft-ul">
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#about">À Propos</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#galerie">Gallery</a></li>
         <li><a href="#booking">Booking</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
     <div>
-      <p class="ft-h">Nos Services</p>
+      <p class="ft-h">Our Services</p>
       <ul class="ft-ul">
         <li><a href="#">Makeup</a></li>
         <li><a href="#">Lashes</a></li>
@@ -594,24 +618,24 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
       </ul>
     </div>
     <div>
-      <p class="ft-h">Contactez-nous</p>
+      <p class="ft-h">Contact Us</p>
       <div class="ft-ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>123 Beauty Lane,<br>New York, NY 10001</span></div>
       <div class="ft-ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 15.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 22v-5.08z"/></svg><span>(555) 123-4567</span></div>
       <div class="ft-ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@luxebeautystudio.com</span></div>
-      <div class="ft-ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span>Lun–Sam : 9h00–19h00<br>Dim : Sur rendez-vous</span></div>
+      <div class="ft-ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span>Mon–Sat: 9:00 AM–7:00 PM<br>Sun: By Appointment</span></div>
     </div>
     <div>
       <p class="ft-h">Newsletter</p>
-      <p class="nl-desc">Restez informée de nos promotions et nouveautés.</p>
+      <p class="nl-desc">Stay updated on our promotions and latest news.</p>
       <div class="nl-row">
-        <input class="nl-in" type="email" placeholder="Votre email" id="nl-email">
-        <button class="nl-btn" onclick="nlSub()">S'Abonner</button>
+        <input class="nl-in" type="email" placeholder="Your email" id="nl-email">
+        <button class="nl-btn" onclick="nlSub()">Subscribe</button>
       </div>
     </div>
   </div>
   <div class="ft-bot">
-    <span class="ft-copy">© 2024 Benie Beauty. Tous droits réservés.</span>
-    <div class="ft-leg"><a href="#">Politique de confidentialité</a><a href="#">Conditions d'utilisation</a></div>
+    <span class="ft-copy">© 2024 Benie Beauty. All rights reserved.</span>
+    <div class="ft-leg"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
   </div>
 </footer>
 
@@ -673,32 +697,27 @@ const SVCS=[
 
 const GALLERY=[
   /* ── MAKEUP : pose pro sur femme africaine ── */
-  {src:'https://images.pexels.com/photos/7446906/pexels-photo-7446906.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'makeup',alt:'Maquilleuse professionnelle appliquant le fond de teint',cap:'Pose Fond de Teint'},
-  {src:'https://images.pexels.com/photos/10698003/pexels-photo-10698003.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'makeup',alt:'Gros plan maquillage yeux pinceau professionnel',cap:'Maquillage Yeux'},
-  /* ── LASHES : extensions cils salon pro ── */
-  {src:'https://images.pexels.com/photos/5128222/pexels-photo-5128222.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'lashes',alt:'Esthéticienne posant extensions cils en salon',cap:'Pose Extensions'},
-  {src:'https://images.pexels.com/photos/5128220/pexels-photo-5128220.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'lashes',alt:'Gros plan application extensions cils pinces',cap:'Cils Volume'},
-  /* ── HAIR : coiffures africaines pro ── */
-  {src:'https://images.pexels.com/photos/7395822/pexels-photo-7395822.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'hair',alt:'Femme africaine tresses longues portrait Zambie',cap:'Box Braids'},
-  {src:'https://images.pexels.com/photos/713527/pexels-photo-713527.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'hair',alt:'Femme coiffure tressée élégante fond violet',cap:'Braids Updo'},
-  /* ── BRIDAL : mariées africaines ── */
-  {src:'https://images.pexels.com/photos/9733839/pexels-photo-9733839.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'bridal',alt:'Mariée africaine robe blanche bijoux portrait',cap:'Glam Mariée'},
-  {src:'https://images.pexels.com/photos/6645066/pexels-photo-6645066.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'bridal',alt:'Mariée africaine robe de mariée luxueuse extérieur',cap:'Jour de Mariage'},
-  /* ── WIGS : perruques salon africain ── */
-  {src:'https://images.pexels.com/photos/6923414/pexels-photo-6923414.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'wigs',alt:'Femme afro-américaine coiffant perruque studio',cap:'Perruque Lace Front'},
-  {src:'https://images.pexels.com/photos/6923437/pexels-photo-6923437.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'wigs',alt:'Coiffeuse installant perruque frisée noire salon',cap:'Perruque Bouclée'},
-  /* ── FACIALS : soins visage africaines ── */
-  {src:'https://images.pexels.com/photos/7479654/pexels-photo-7479654.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'facials',alt:'Femme noire masque argile soin visage naturel',cap:'Soin Éclat'},
-  {src:'https://images.pexels.com/photos/7446675/pexels-photo-7446675.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'facials',alt:'Femme soin facial relaxant spa esthétique',cap:'Soin Profond'}
+  {src:'https://images.pexels.com/photos/7446906/pexels-photo-7446906.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'makeup',alt:'Professional makeup artist applying foundation',cap:'Foundation Application'},
+  {src:'https://images.pexels.com/photos/10698003/pexels-photo-10698003.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'makeup',alt:'Close-up eye makeup with professional brush',cap:'Eye Glam'},
+  {src:'https://images.pexels.com/photos/5128222/pexels-photo-5128222.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'lashes',alt:'Lash artist applying extensions in salon',cap:'Lash Extensions'},
+  {src:'https://images.pexels.com/photos/5128220/pexels-photo-5128220.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'lashes',alt:'Close-up lash extension application with tweezers',cap:'Volume Lashes'},
+  {src:'https://images.pexels.com/photos/7395822/pexels-photo-7395822.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'hair',alt:'African woman with long braids portrait',cap:'Box Braids'},
+  {src:'https://images.pexels.com/photos/713527/pexels-photo-713527.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'hair',alt:'Woman with elegant braided updo hairstyle',cap:'Braids Updo'},
+  {src:'https://images.pexels.com/photos/9733839/pexels-photo-9733839.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'bridal',alt:'African bride in white dress portrait',cap:'Bridal Glam'},
+  {src:'https://images.pexels.com/photos/6645066/pexels-photo-6645066.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'bridal',alt:'Luxurious African bride in wedding gown outdoors',cap:'Wedding Day'},
+  {src:'https://images.pexels.com/photos/6923414/pexels-photo-6923414.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'wigs',alt:'Woman styling lace front wig in studio',cap:'Lace Front Wig'},
+  {src:'https://images.pexels.com/photos/6923437/pexels-photo-6923437.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'wigs',alt:'Stylist installing curly wig in salon',cap:'Curly Wig Install'},
+  {src:'https://images.pexels.com/photos/7479654/pexels-photo-7479654.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'facials',alt:'Black woman with clay mask natural facial',cap:'Glow Facial'},
+  {src:'https://images.pexels.com/photos/7446675/pexels-photo-7446675.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop',cat:'facials',alt:'Woman receiving relaxing facial spa treatment',cap:'Deep Cleanse'}
 ];
 
 const TESTIS=[
-  {name:'Sarah M.',text:'"Mon maquillage de mariage était parfait ! Il a tenu toute la journée. Je recommande à 100% !"',ph:'https://images.pexels.com/photos/1977292/pexels-photo-1977292.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
-  {name:'Jessica T.',text:'"Les extensions de cils sont magnifiques et très naturelles. Service impeccable !"',ph:'https://images.pexels.com/photos/1852947/pexels-photo-1852947.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
-  {name:'Amanda R.',text:'"Équipe professionnelle, ambiance relaxante et résultats incroyables à chaque fois."',ph:'https://images.pexels.com/photos/3484306/pexels-photo-3484306.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
-  {name:'Priya K.',text:'"Les soins du visage sont extraordinaires. Ma peau n\'a jamais été aussi lumineuse !"',ph:'https://images.pexels.com/photos/2748140/pexels-photo-2748140.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
-  {name:'Maria L.',text:'"J\'adore mes extensions ! Très naturelles et durables. Je reviendrai certainement."',ph:'https://images.pexels.com/photos/5579643/pexels-photo-5579643.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
-  {name:'Naomi B.',text:'"Service bridal exceptionnel. Toute l\'équipe était attentionnée et professionnelle."',ph:'https://images.pexels.com/photos/7587171/pexels-photo-7587171.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'}
+  {name:'Sarah M.',text:'"My wedding makeup was absolutely perfect! It lasted all day. I 100% recommend Benie Beauty!"',ph:'https://images.pexels.com/photos/1977292/pexels-photo-1977292.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
+  {name:'Jessica T.',text:'"The lash extensions are gorgeous and so natural looking. Impeccable service every time!"',ph:'https://images.pexels.com/photos/1852947/pexels-photo-1852947.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
+  {name:'Amanda R.',text:'"Professional team, relaxing atmosphere, and incredible results every single visit."',ph:'https://images.pexels.com/photos/3484306/pexels-photo-3484306.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
+  {name:'Priya K.',text:'"The facials are extraordinary. My skin has never looked so glowing and radiant!"',ph:'https://images.pexels.com/photos/2748140/pexels-photo-2748140.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
+  {name:'Maria L.',text:'"I love my lash extensions! So natural and long-lasting. I will definitely be coming back."',ph:'https://images.pexels.com/photos/5579643/pexels-photo-5579643.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'},
+  {name:'Naomi B.',text:'"Exceptional bridal service. The entire team was attentive, caring, and professional."',ph:'https://images.pexels.com/photos/7587171/pexels-photo-7587171.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'}
 ];
 
 /* ═══════════════════════════ INIT ═══════════════════════════ */
@@ -788,7 +807,7 @@ function renderServices(){
       <div class="svc-gold-bar"></div>
       <div class="svc-cb-body">
         <ul class="svc-cb-list">${s.list.slice(0,s.addon?6:5).map(i=>`<li>${i}</li>`).join('')}</ul>
-        <a href="#booking" class="svc-cb-lnk">Réserver</a>
+        <a href="#booking" class="svc-cb-lnk">Book Now</a>
       </div>
     </div>`).join('');
 }
@@ -860,29 +879,29 @@ function showStep(n){
 }
 function bkNext(from){
   if(from===1){
-    if(!document.getElementById('bk-svc').value){showToast('Veuillez sélectionner un service','err');return;}
+    if(!document.getElementById('bk-svc').value){showToast('Please select a service','err');return;}
     showStep(2);
   } else if(from===2){
-    if(!document.getElementById('bk-date').value||!document.getElementById('bk-time').value){showToast('Choisissez une date et une heure','err');return;}
+    if(!document.getElementById('bk-date').value||!document.getElementById('bk-time').value){showToast('Please choose a date and time','err');return;}
     showStep(3);
   } else if(from===3){
     const n=document.getElementById('bk-name').value,p=document.getElementById('bk-tel').value,e=document.getElementById('bk-email').value;
-    if(!n||!p||!e){showToast('Remplissez tous les champs obligatoires','err');return;}
+    if(!n||!p||!e){showToast('Please fill in all required fields','err');return;}
     // Build summary
     document.getElementById('bk-sum').innerHTML=`
-      <p><strong>Service :</strong> ${document.getElementById('bk-svc').value}</p>
-      <p><strong>Date :</strong> ${document.getElementById('bk-date').value}</p>
-      <p><strong>Heure :</strong> ${document.getElementById('bk-time').value}</p>
-      <p><strong>Nom :</strong> ${n}</p>
-      <p><strong>Téléphone :</strong> ${p}</p>
-      <p><strong>Email :</strong> ${e}</p>`;
+      <p><strong>Service:</strong> ${document.getElementById('bk-svc').value}</p>
+      <p><strong>Date:</strong> ${document.getElementById('bk-date').value}</p>
+      <p><strong>Time:</strong> ${document.getElementById('bk-time').value}</p>
+      <p><strong>Name:</strong> ${n}</p>
+      <p><strong>Phone:</strong> ${p}</p>
+      <p><strong>Email:</strong> ${e}</p>`;
     showStep(4);
   }
 }
 function bkBack(from){showStep(from-1);}
 function bkSubmit(){
   showStep('ok');
-  showToast('Réservation confirmée ! ✓');
+  showToast('Booking confirmed! ✓');
 }
 function bkReset(){
   document.getElementById('bk-svc').value='';
@@ -957,9 +976,9 @@ function showToast(msg,type=''){
 /* ═══════════════════════════ NEWSLETTER ═══════════════════════════ */
 function nlSub(){
   const v=document.getElementById('nl-email').value;
-  if(!v||!v.includes('@')){showToast('Entrez un email valide','err');return;}
+  if(!v||!v.includes('@')){showToast('Please enter a valid email','err');return;}
   document.getElementById('nl-email').value='';
-  showToast('Merci pour votre inscription !');
+  showToast('Thank you for subscribing!');
 }
 
 /* ── Smooth scroll for anchors ── */
