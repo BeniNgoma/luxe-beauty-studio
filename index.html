@@ -149,7 +149,7 @@ nav a.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;heig
 
 /* ── ABOUT + BOOKING ── */
 .ab{padding:80px 52px;background:var(--pale)}
-.ab-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:42px;max-width:1260px;margin:0 auto;align-items:start}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;max-width:1260px;margin:0 auto;align-items:start}
 .ab-lbl{font-size:9.5px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--pk);margin-bottom:14px}
 .ab-tit{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;line-height:1.2;margin-bottom:17px}
 .ab-dsc{font-size:12.5px;color:var(--gray);line-height:1.85;margin-bottom:20px}
@@ -292,8 +292,6 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
   .hero-script{font-size:clamp(1.9rem,3.8vw,3.2rem)}
   .hero-left{padding:40px 28px 40px 48px}
   .hero-left::before{left:28px}
-  .ab-grid{grid-template-columns:1fr 1fr;gap:28px}
-  .ab-grid>div:last-child{grid-column:1/-1}
 }
 @media(max-width:900px){
   .ab-grid{grid-template-columns:1fr;gap:28px}
@@ -440,15 +438,6 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="sch rv">
-    <h2 class="sct">Our Services</h2>
-    <div class="scd"></div>
-  </div>
-  <div class="svc-grid-b" id="svc-grid"></div>
-</section>
-
 <!-- ABOUT + BOOKING -->
 <section class="ab" id="about">
   <div class="ab-grid">
@@ -463,9 +452,6 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
         <li>Exceptional results every time</li>
       </ul>
       <a href="#" class="btn-out">Learn More</a>
-    </div>
-    <div class="rv">
-      <div class="ab-img"><img src="https://images.pexels.com/photos/7823407/pexels-photo-7823407.jpeg?auto=compress&cs=tinysrgb&w=500&h=420&fit=crop" alt="Salon Benie Beauty"></div>
     </div>
     <div class="bk-box rv rvr" id="booking">
       <p class="bk-lbl">Book an Appointment</p>
@@ -538,6 +524,15 @@ footer{background:#fff;border-top:1px solid var(--bdr);padding:60px 52px 0}
       </div>
     </div>
   </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="sch rv">
+    <h2 class="sct">Our Services</h2>
+    <div class="scd"></div>
+  </div>
+  <div class="svc-grid-b" id="svc-grid"></div>
 </section>
 
 <!-- GALLERY -->
